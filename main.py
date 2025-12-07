@@ -4,6 +4,9 @@ from board import Board
 
 
 def main():
+    ascii_list = AsciiList
+    #ascii_list.list_all()
+    #print("¯¯¯---___")
     user_interface = CommandLineUserInterface()
     board_size = user_interface.ask_board_size()
     board = Board(board_size[0], board_size[1])

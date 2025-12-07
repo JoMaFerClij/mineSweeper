@@ -51,12 +51,31 @@ class CommandLineUserInterface():
 
     def draw_board(self, board:Board):
 
+        wall = "|"
+        floor = "_____"
+        first_line = ""
+        second_line = ""
+        first_line = board.height * "| ̶̶ ̶ ̶ ̶̶ ̶̶" + "|"
+        #top_line = board.height * "______" + "_"
+        #first_line = (board.height * "|     ") + "|"
+        floor_line = board.height * "| ̶̶ ̶ ̶ ̶̶ ̶̶" + "|"
+
         print ("board height= ", board.height, " - board with = ", board.width)
         print (round(board.width/2)*"   ", "Mine Sweeper")
+        #print(top_line)
 
-        for i in range (board.height):
-            for j in range (board.width):
-                print("---|")
+        print(first_line)
+        for i in range (board.width):
+            for j in range (board.height):
+                #if (i == 0) and (j == 0):
+                    #print(top_line)
+                second_line += wall + "  2  "
+
+            print(second_line + wall)
+            print(floor_line)
+            second_line = ""
+
+
 
 
         """  #board_size = self.ask_board_size()
