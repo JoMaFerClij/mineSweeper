@@ -13,9 +13,6 @@ def main():
 
     board.fill_mines_array()
     user_interface.draw_board(board)
-    x: int = 1
-    y: int = 1
-    #print("Value in " + str(x) + ", " + str(y) + " is: " + str(board.return_values(x, y)))
 
 
 if __name__ == '__main__':
