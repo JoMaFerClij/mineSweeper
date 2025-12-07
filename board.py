@@ -18,13 +18,15 @@ class Board:
                     randomines = 1
                 self.mines_array[i, j] = randomines
                 randomines = 0
-        print(self.mines_array)
+        #print(self.mines_array)
 
     def mark_cell(self):
         ...
 
     def compute_numbers(self):
         ...
+    def return_values(self, y, x):
+        return self.mines_array[x, y]
 
 
 

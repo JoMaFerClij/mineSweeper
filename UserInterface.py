@@ -53,28 +53,35 @@ class CommandLineUserInterface():
 
         wall = "|"
         floor = "_____"
-        first_line = ""
+        first_line = "  "
         second_line = ""
-        first_line = board.height * "| ̶̶ ̶ ̶ ̶̶ ̶̶" + "|"
+        numbers_line = "      "
+        for x in range(board.height):
+            numbers_line += str(x + 1) + "     "
+        first_line = "   " + board.height * "| ̶̶ ̶ ̶ ̶̶ ̶̶" + "|"
         #top_line = board.height * "______" + "_"
         #first_line = (board.height * "|     ") + "|"
-        floor_line = board.height * "| ̶̶ ̶ ̶ ̶̶ ̶̶" + "|"
+        floor_line = "   " + board.height * "| ̶̶ ̶ ̶ ̶̶ ̶̶" + "|"
 
-        print ("board height= ", board.height, " - board with = ", board.width)
-        print (round(board.width/2)*"   ", "Mine Sweeper")
+        #print ("board height= ", board.height, " - board with = ", board.width)
+        print ("  " + (round(board.height/1.6)  * "    "), "Mine Sweeper")
+        print(numbers_line)
         #print(top_line)
 
         print(first_line)
         for i in range (board.width):
             for j in range (board.height):
-                #if (i == 0) and (j == 0):
-                    #print(top_line)
-                second_line += wall + "  2  "
+                if j == 0:
+                    second_line += str(i + 1) + "  "
+                second_line += wall + "  " + str(round(board.return_values(j, i))) + "  "
 
             print(second_line + wall)
             print(floor_line)
             second_line = ""
 
+
+    def ask_for_cell(self):
+        pass
 
 
 
